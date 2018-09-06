@@ -41,6 +41,25 @@ public class PollService {
         Poll poll = new Poll(url,pollChoiceArrayList, question, publishStamp);
 
         pollsArray.add(poll);
+        
+                url = "/questions/2";
+        question = "What is your favourite Australian animal";
+        pollChoice1= new PollChoice(86,"Koala","/questions/2/choices/1");
+        pollChoice2= new PollChoice(43,"Kangaroo","/questions/2/choices/2");
+        pollChoice3= new PollChoice(79,"Wallabee","/questions/2/choices/3");
+        pollChoice4= new PollChoice(51,"Emu","/questions/2/choices/4");
+
+        pollChoiceArrayList = new ArrayList<PollChoice>();
+        pollChoiceArrayList.add(pollChoice1);
+        pollChoiceArrayList.add(pollChoice2);
+        pollChoiceArrayList.add(pollChoice3);
+        pollChoiceArrayList.add(pollChoice4);
+
+        publishStamp = String.valueOf(date);
+
+        poll = new Poll(url,pollChoiceArrayList, question, publishStamp);
+
+        pollsArray.add(poll);
     }
 
     public Poll getPoll(int id){
